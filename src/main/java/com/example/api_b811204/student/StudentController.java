@@ -22,7 +22,7 @@ public class StudentController {
      */
     //Query String
     @ResponseBody
-    @GetMapping("/degree") // (GET) 127.0.0.1:8080/students/degree
+    @GetMapping("/degree") // (GET) 127.0.0.1:8082/students/degree
     public String getStudentDegree(@RequestParam(required = true) String name) {
 
             // Get StudentDegree By Name
@@ -38,7 +38,7 @@ public class StudentController {
      */
     //Query String
     @ResponseBody
-    @GetMapping("/email") // (GET) 127.0.0.1:8080/students/email
+    @GetMapping("/email") // (GET) 127.0.0.1:8082/students/email
     public String getStudentEmail(@RequestParam(required = true) String name) {
 
         // Get StudentDegree By Name
@@ -54,7 +54,7 @@ public class StudentController {
      */
     //Query String
     @ResponseBody
-    @GetMapping("/stat") // (GET) 127.0.0.1:8080/students/stat
+    @GetMapping("/stat") // (GET) 127.0.0.1:8082/students/stat
     public String getDegreeCount(@RequestParam(required = true) String degree) {
 
         // Get StudentDegree By Name
@@ -69,7 +69,7 @@ public class StudentController {
      */
     //Query String
     @ResponseBody
-    @PutMapping("/register") // (GET) 127.0.0.1:8080/students/
+    @PutMapping("/register") // (GET) 127.0.0.1:8082/students/
     public String putStudent(@RequestParam(required = true) String name, @RequestParam(required = true) String email, @RequestParam(required = true) String degree, @RequestParam(required = true) int graduation) {
         PutStudentReq data = new PutStudentReq(name, email, graduation, degree);
         String putStudentRes = studentService.putStudent(data);
