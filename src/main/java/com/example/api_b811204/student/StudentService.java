@@ -52,15 +52,9 @@ public class StudentService {
     }
 
     public String getDegreeCount(String degree) {
-        List<String> emailList = studentDao.selectStudentsCountByDegree(degree);
+        List<String> count = studentDao.selectStudentsCountByDegree(degree);
+            return  "Number of "+ degree+"'s student : " + count.get(0);
 
-        if (emailList.size() > 1) {
-            return "There are multiple students with the same name. Please contact the administrator by phone.";
-        } else if (emailList.size() == 0) {
-            return "No such student";
-        } else {
-            return degree + " : " + emailList.get(0);
-        }
     }
 
     public String putStudent(PutStudentReq data) {
